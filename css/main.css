@@ -1,0 +1,29 @@
+.page-wrapper, .mini-sidebar .page-wrapper {
+	margin-left: 0;
+}
+
+#pre-load-gart {
+	margin: 0 auto;
+}
+
+.ico-gart {
+	font-size: 10px;
+}
+
+.sv-panel {
+	position: initial !important;
+}
+
+.ul-alli {
+	padding-right: 0;
+}
+
+.icheck-list > li {
+	display: inline-block;
+}
+
+@media (min-width: 768px) {
+	.navbar-header {
+		width: 260px;
+	}
+}
