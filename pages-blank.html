@@ -79,7 +79,15 @@
                 <div class="navbar-collapse">
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
-					<ul class="navbar-nav mr-auto mt-md-0"></ul>
+					<ul class="navbar-nav mr-auto mt-md-0">
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" href="#"><i class="mdi mdi-xbox-controller"></i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" href="#"><i class="mdi mdi-account-multiple"></i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" href="#"><i class="mdi mdi-memory"></i></a></li>
+						
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" href="#">Match scout</i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" href="#">Alliance scout</i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" href="#">Team scout</a></li>
+					</ul>
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
                         <!-- ============================================================== -->
@@ -116,7 +124,7 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Scouting app</h3>
+                    <h3 class="text-themecolor">Match scout</h3>
                 </div>
                 <div>
                     <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
@@ -166,423 +174,185 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Region</label>
+													<select class="form-control custom-select">
+														<option value="SPR">South Pacific Regional</option>
+														<option value="SCR">Southern Cross Regional</option>
+														<option value="test">Test</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Match type</label>
+													<select class="form-control custom-select">
+														<option value="practice">Practice Match</option>
+														<option value="qualification">Qualification Match</option>
+														<option value="elimination">Elimination Match</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="wLocation1">Scouted team</label>
                                                     <select name="wlocation" id="wLocation1" class="select2 form-control required custom-select" data-placeholder="-----Team-----" style="width: 100%; height:36px;">
 														<option value=""></option>
-														<optgroup label="South Pacific Regional">
-															<option value="2437">2437: Lancer Robotics</option>
-															<option value="3132">3132: Thunder Down Under</option>
-															<option value="3881">3881: WHEA Sharkbots</option>
-															<option value="4270">4270: Crusaders</option>
-															<option value="4537">4537: RoboRoos</option>
-															<option value="4613">4613: Barker Redbacks</option>
-															<option value="4729">4729: EMUs (Experimental Mayhem Unit)</option>
-															<option value="4739">4739: CNTRL F5</option>
-															<option value="4774">4774: The Drop Bears</option>
-															<option value="4802">4802: U.M.M (Unidentified Moving Machines)</option>
-															<option value="5308">5308: Wuhan Yangtze</option>
-															<option value="5333">5333: Can't C#</option>
-															<option value="5449">5449: Prototype</option>
-															<option value="5451">5451: Supernova</option>
-															<option value="5516">5516: Iron Maple</option>
-															<option value="5522">5522: Stargazer</option>
-															<option value="5584">5584: ICRobotics</option>
-															<option value="5648">5648: Melbourne RoboCats</option>
-															<option value="5663">5663: Ground Control</option>
-															<option value="5876">5876: ARTEMIS</option>
-															<option value="5983">5983: Blast Furnace Bots</option>
-															<option value="5985">5985: Project Bucephalus</option>
-															<option value="5988">5988: Narooma Robo Rebels</option>
-															<option value="6007">6007: RoboPod</option>
-															<option value="6035">6035: House of Ulladulla Robotics</option>
-															<option value="6063">6063: QLA Pineapples</option>
-															<option value="6083">6083: Overlooking</option>
-															<option value="6304">6304: EAGLE</option>
-															<option value="6386">6386: Guangzhou research robot club</option>
-															<option value="6393">6393: Pioneer</option>
-															<option value="6432">6432: St Cathodes</option>
-															<option value="6434">6434: Bossley Park High School</option>
-															<option value="6441">6441: Turbo Turtle</option>
-															<option value="6476">6476: Supernova Star Squad</option>
-															<option value="6508">6508: Hastings Heroes</option>
-															<option value="6510">6510: Pymble Pride</option>
-															<option value="6520">6520: GreenAms Robotics Team</option>
-															<option value="6524">6524: Wilder Wolves FRC</option>
-															<option value="6575">6575: Tempe T-Rex</option>
-															<option value="6579">6579: Komplete Kaos Inc</option>
-															<option value="6813">6813: Pangaea</option>
-															<option value="6986">6986: White Shark</option>
-															<option value="6996">6996: Koalafied</option>
-															<option value="6997">6997: Bad wolf</option>
-															<option value="7047">7047: Magic Frog</option>
-															<option value="7074">7074: Reapers</option>
-															<option value="7113">7113: Control Rising</option>
-															<option value="7129">7129: Pilbara Protons</option>
-															<option value="7146">7146: Infinity Robotics</option>
-															<option value="7433">7433: Iona Fusion</option>
-															<option value="7551">7551: Extreme Mechanism</option>
-															<option value="7561">7561: Blue Flamingos</option>
-															<option value="7586">7586: ShenHao_The Salted Fishballs</option>
-															<option value="7588">7588: H.I.I Robot</option>
-															<option value="7593">7593: SymbiOHSis</option>
-															<option value="7601">7601: Iron Phoenix</option>
-															<option value="7707">7707: Cutting Edge Robotics</option>
-															<option value="7709">7709: Formosa Pangolin</option>
-															<option value="7719">7719: Java Knights</option>
-															<option value="7741">7741: South Taiwan AI Robot</option>
-															<option value="7779">7779: Team Murdoch</option>
-															<option value="7838">7838: Crobotics</option>
-															<option value="7844">7844: Yirara Colleg</option>
-															<option value="7884">7884: Parramatta High School</option>
-														</optgroup>
-														<optgroup label="Southern Cross Regional">
-															<option value="3132">3132: Thunder Down Under</option>
-															<option value="3881">3881: WHEA Sharkbots</option>
-															<option value="4253">4253: Raid Zero</option>
-															<option value="4613">4613: Barker Redbacks</option>
-															<option value="4614">4614: Purple Monkey Dishwasher</option>
-															<option value="4774">4774: The Drop Bears</option>
-															<option value="4801">4801: Blacktown Boys Cybernetic Phoenix</option>
-															<option value="4802">4802: U.M.M (Unidentified Moving Machines)</option>
-															<option value="4817">4817: One Degree North</option>
-															<option value="5308">5308: Wuhan Yangtze</option>
-															<option value="5449">5449: Prototype</option>
-															<option value="5451">5451: Supernova</option>
-															<option value="5516">5516: Iron Maple</option>
-															<option value="5564">5564: GBHS Robotics</option>
-															<option value="5593">5593: Devil Robotics</option>
-															<option value="5985">5985: Project Bucephalus</option>
-															<option value="6050">6050: Wee Waa Bush Bots</option>
-															<option value="6083">6083: Overlooking</option>
-															<option value="6191">6191: RoboKryptonite</option>
-															<option value="6434">6434: Bossley Park High School</option>
-															<option value="6510">6510: Pymble Pride</option>
-															<option value="6520">6520: GreenAms Robotics Team</option>
-															<option value="6525">6525: Greater Sydney Robotics</option>
-															<option value="6579">6579: Komplete Kaos Inc</option>
-															<option value="6986">6986: White Shark</option>
-															<option value="6996">6996: Koalafied</option>
-															<option value="7023">7023: Oxley High School Robotics Team</option>
-															<option value="7124">7124: 8-bit Destroyers - Cranebrook HS</option>
-															<option value="7128">7128: XLR8</option>
-															<option value="7130">7130: FABLAB MDHS</option>
-															<option value="7163">7163: A.I. Metal Pies</option>
-															<option value="7278">7278: Toormina High School</option>
-															<option value="7433">7433: Iona Fusion</option>
-															<option value="7523">7523: SpringBots</option>
-															<option value="7526">7526: Welcome to team</option>
-															<option value="7527">7527: Kaohsiung power</option>
-															<option value="7583">7583: Elonera Embers</option>
-															<option value="7593">7593: SymbiOHSis</option>
-															<option value="7632">7632: An Kang Robotics Maker</option>
-															<option value="7636">7636: Robomania</option>
-															<option value="7641">7641: Normal Force</option>
-															<option value="7644">7644: CCHS</option>
-															<option value="7719">7719: Java Knights</option>
-															<option value="7780">7780: Colyton High School</option>
-														</optgroup>
+														<option value="2437">2437: Lancer Robotics</option>
+														<option value="3132">3132: Thunder Down Under</option>
+														<option value="3881">3881: WHEA Sharkbots</option>
+														<option value="4253">4253: Raid Zero</option>
+														<option value="4270">4270: Crusaders</option>
+														<option value="4537">4537: RoboRoos</option>
+														<option value="4613">4613: Barker Redbacks</option>
+														<option value="4614">4614: Purple Monkey Dishwasher</option>
+														<option value="4729">4729: EMUs (Experimental Mayhem Unit)</option>
+														<option value="4739">4739: CNTRL F5</option>
+														<option value="4774">4774: The Drop Bears</option>
+														<option value="4801">4801: Blacktown Boys Cybernetic Phoenix</option>
+														<option value="4802">4802: U.M.M (Unidentified Moving Machines)</option>
+														<option value="4817">4817: One Degree North</option>
+														<option value="5308">5308: Wuhan Yangtze</option>
+														<option value="5333">5333: Can't C#</option>
+														<option value="5449">5449: Prototype</option>
+														<option value="5451">5451: Supernova</option>
+														<option value="5516">5516: Iron Maple</option>
+														<option value="5522">5522: Stargazer</option>
+														<option value="5564">5564: GBHS Robotics</option>
+														<option value="5584">5584: ICRobotics</option>
+														<option value="5593">5593: Devil Robotics</option>
+														<option value="5648">5648: Melbourne RoboCats</option>
+														<option value="5663">5663: Ground Control</option>
+														<option value="5876">5876: ARTEMIS</option>
+														<option value="5983">5983: Blast Furnace Bots</option>
+														<option value="5985">5985: Project Bucephalus</option>
+														<option value="5988">5988: Narooma Robo Rebels</option>
+														<option value="6007">6007: RoboPod</option>
+														<option value="6035">6035: House of Ulladulla Robotics</option>
+														<option value="6050">6050: Wee Waa Bush Bots</option>
+														<option value="6063">6063: QLA Pineapples</option>
+														<option value="6083">6083: Overlooking</option>
+														<option value="6191">6191: RoboKryptonite</option>
+														<option value="6304">6304: EAGLE</option>
+														<option value="6386">6386: Guangzhou research robot club</option>
+														<option value="6393">6393: Pioneer</option>
+														<option value="6432">6432: St Cathodes</option>
+														<option value="6434">6434: Bossley Park High School</option>
+														<option value="6441">6441: Turbo Turtle</option>
+														<option value="6476">6476: Supernova Star Squad</option>
+														<option value="6508">6508: Hastings Heroes</option>
+														<option value="6510">6510: Pymble Pride</option>
+														<option value="6520">6520: GreenAms Robotics Team</option>
+														<option value="6524">6524: Wilder Wolves FRC</option>
+														<option value="6525">6525: Greater Sydney Robotics</option>
+														<option value="6575">6575: Tempe T-Rex</option>
+														<option value="6579">6579: Komplete Kaos Inc</option>
+														<option value="6813">6813: Pangaea</option>
+														<option value="6986">6986: White Shark</option>
+														<option value="6996">6996: Koalafied</option>
+														<option value="6997">6997: Bad wolf</option>
+														<option value="7023">7023: Oxley High School Robotics Team</option>
+														<option value="7047">7047: Magic Frog</option>
+														<option value="7074">7074: Reapers</option>
+														<option value="7113">7113: Control Rising</option>
+														<option value="7124">7124: 8-bit Destroyers - Cranebrook HS</option>
+														<option value="7128">7128: XLR8</option>
+														<option value="7129">7129: Pilbara Protons</option>
+														<option value="7130">7130: FABLAB MDHS</option>
+														<option value="7146">7146: Infinity Robotics</option>
+														<option value="7163">7163: A.I. Metal Pies</option>
+														<option value="7278">7278: Toormina High School</option>
+														<option value="7433">7433: Iona Fusion</option>
+														<option value="7523">7523: SpringBots</option>
+														<option value="7526">7526: Welcome to team</option>
+														<option value="7527">7527: Kaohsiung power</option>
+														<option value="7551">7551: Extreme Mechanism</option>
+														<option value="7561">7561: Blue Flamingos</option>
+														<option value="7583">7583: Elonera Embers</option>
+														<option value="7586">7586: ShenHao_The Salted Fishballs</option>
+														<option value="7588">7588: H.I.I Robot</option>
+														<option value="7593">7593: SymbiOHSis</option>
+														<option value="7601">7601: Iron Phoenix</option>
+														<option value="7632">7632: An Kang Robotics Maker</option>
+														<option value="7636">7636: Robomania</option>
+														<option value="7641">7641: Normal Force</option>
+														<option value="7644">7644: CCHS</option>
+														<option value="7707">7707: Cutting Edge Robotics</option>
+														<option value="7709">7709: Formosa Pangolin</option>
+														<option value="7719">7719: Java Knights</option>
+														<option value="7741">7741: South Taiwan AI Robot</option>
+														<option value="7779">7779: Team Murdoch</option>
+														<option value="7780">7780: Colyton High School</option>
+														<option value="7838">7838: Crobotics</option>
+														<option value="7844">7844: Yirara Colleg</option>
+														<option value="7884">7884: Parramatta High School</option>
 													</select>
 												</div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="wlocation2">Teammate 1</label>
-                                                    <select id="wlocation2" name="location" class="select2 form-control required custom-select" data-placeholder="-----Team-----" style="width: 100%; height:36px;">
-														<option value=""></option>
-														<optgroup label="South Pacific Regional">
-															<option value="2437">2437: Lancer Robotics</option>
-															<option value="3132">3132: Thunder Down Under</option>
-															<option value="3881">3881: WHEA Sharkbots</option>
-															<option value="4270">4270: Crusaders</option>
-															<option value="4537">4537: RoboRoos</option>
-															<option value="4613">4613: Barker Redbacks</option>
-															<option value="4729">4729: EMUs (Experimental Mayhem Unit)</option>
-															<option value="4739">4739: CNTRL F5</option>
-															<option value="4774">4774: The Drop Bears</option>
-															<option value="4802">4802: U.M.M (Unidentified Moving Machines)</option>
-															<option value="5308">5308: Wuhan Yangtze</option>
-															<option value="5333">5333: Can't C#</option>
-															<option value="5449">5449: Prototype</option>
-															<option value="5451">5451: Supernova</option>
-															<option value="5516">5516: Iron Maple</option>
-															<option value="5522">5522: Stargazer</option>
-															<option value="5584">5584: ICRobotics</option>
-															<option value="5648">5648: Melbourne RoboCats</option>
-															<option value="5663">5663: Ground Control</option>
-															<option value="5876">5876: ARTEMIS</option>
-															<option value="5983">5983: Blast Furnace Bots</option>
-															<option value="5985">5985: Project Bucephalus</option>
-															<option value="5988">5988: Narooma Robo Rebels</option>
-															<option value="6007">6007: RoboPod</option>
-															<option value="6035">6035: House of Ulladulla Robotics</option>
-															<option value="6063">6063: QLA Pineapples</option>
-															<option value="6083">6083: Overlooking</option>
-															<option value="6304">6304: EAGLE</option>
-															<option value="6386">6386: Guangzhou research robot club</option>
-															<option value="6393">6393: Pioneer</option>
-															<option value="6432">6432: St Cathodes</option>
-															<option value="6434">6434: Bossley Park High School</option>
-															<option value="6441">6441: Turbo Turtle</option>
-															<option value="6476">6476: Supernova Star Squad</option>
-															<option value="6508">6508: Hastings Heroes</option>
-															<option value="6510">6510: Pymble Pride</option>
-															<option value="6520">6520: GreenAms Robotics Team</option>
-															<option value="6524">6524: Wilder Wolves FRC</option>
-															<option value="6575">6575: Tempe T-Rex</option>
-															<option value="6579">6579: Komplete Kaos Inc</option>
-															<option value="6813">6813: Pangaea</option>
-															<option value="6986">6986: White Shark</option>
-															<option value="6996">6996: Koalafied</option>
-															<option value="6997">6997: Bad wolf</option>
-															<option value="7047">7047: Magic Frog</option>
-															<option value="7074">7074: Reapers</option>
-															<option value="7113">7113: Control Rising</option>
-															<option value="7129">7129: Pilbara Protons</option>
-															<option value="7146">7146: Infinity Robotics</option>
-															<option value="7433">7433: Iona Fusion</option>
-															<option value="7551">7551: Extreme Mechanism</option>
-															<option value="7561">7561: Blue Flamingos</option>
-															<option value="7586">7586: ShenHao_The Salted Fishballs</option>
-															<option value="7588">7588: H.I.I Robot</option>
-															<option value="7593">7593: SymbiOHSis</option>
-															<option value="7601">7601: Iron Phoenix</option>
-															<option value="7707">7707: Cutting Edge Robotics</option>
-															<option value="7709">7709: Formosa Pangolin</option>
-															<option value="7719">7719: Java Knights</option>
-															<option value="7741">7741: South Taiwan AI Robot</option>
-															<option value="7779">7779: Team Murdoch</option>
-															<option value="7838">7838: Crobotics</option>
-															<option value="7844">7844: Yirara Colleg</option>
-															<option value="7884">7884: Parramatta High School</option>
-														</optgroup>
-														<optgroup label="Southern Cross Regional">
-															<option value="3132">3132: Thunder Down Under</option>
-															<option value="3881">3881: WHEA Sharkbots</option>
-															<option value="4253">4253: Raid Zero</option>
-															<option value="4613">4613: Barker Redbacks</option>
-															<option value="4614">4614: Purple Monkey Dishwasher</option>
-															<option value="4774">4774: The Drop Bears</option>
-															<option value="4801">4801: Blacktown Boys Cybernetic Phoenix</option>
-															<option value="4802">4802: U.M.M (Unidentified Moving Machines)</option>
-															<option value="4817">4817: One Degree North</option>
-															<option value="5308">5308: Wuhan Yangtze</option>
-															<option value="5449">5449: Prototype</option>
-															<option value="5451">5451: Supernova</option>
-															<option value="5516">5516: Iron Maple</option>
-															<option value="5564">5564: GBHS Robotics</option>
-															<option value="5593">5593: Devil Robotics</option>
-															<option value="5985">5985: Project Bucephalus</option>
-															<option value="6050">6050: Wee Waa Bush Bots</option>
-															<option value="6083">6083: Overlooking</option>
-															<option value="6191">6191: RoboKryptonite</option>
-															<option value="6434">6434: Bossley Park High School</option>
-															<option value="6510">6510: Pymble Pride</option>
-															<option value="6520">6520: GreenAms Robotics Team</option>
-															<option value="6525">6525: Greater Sydney Robotics</option>
-															<option value="6579">6579: Komplete Kaos Inc</option>
-															<option value="6986">6986: White Shark</option>
-															<option value="6996">6996: Koalafied</option>
-															<option value="7023">7023: Oxley High School Robotics Team</option>
-															<option value="7124">7124: 8-bit Destroyers - Cranebrook HS</option>
-															<option value="7128">7128: XLR8</option>
-															<option value="7130">7130: FABLAB MDHS</option>
-															<option value="7163">7163: A.I. Metal Pies</option>
-															<option value="7278">7278: Toormina High School</option>
-															<option value="7433">7433: Iona Fusion</option>
-															<option value="7523">7523: SpringBots</option>
-															<option value="7526">7526: Welcome to team</option>
-															<option value="7527">7527: Kaohsiung power</option>
-															<option value="7583">7583: Elonera Embers</option>
-															<option value="7593">7593: SymbiOHSis</option>
-															<option value="7632">7632: An Kang Robotics Maker</option>
-															<option value="7636">7636: Robomania</option>
-															<option value="7641">7641: Normal Force</option>
-															<option value="7644">7644: CCHS</option>
-															<option value="7719">7719: Java Knights</option>
-															<option value="7780">7780: Colyton High School</option>
-														</optgroup>
-													</select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="wTm2">Teammate 2</label>
-                                                    <select id="wTm2" class="select2 form-control required custom-select" data-placeholder="-----Team-----" style="width: 100%; height:36px;">
-														<option value=""></option>
-														<optgroup label="South Pacific Regional">
-															<option value="2437">2437: Lancer Robotics</option>
-															<option value="3132">3132: Thunder Down Under</option>
-															<option value="3881">3881: WHEA Sharkbots</option>
-															<option value="4270">4270: Crusaders</option>
-															<option value="4537">4537: RoboRoos</option>
-															<option value="4613">4613: Barker Redbacks</option>
-															<option value="4729">4729: EMUs (Experimental Mayhem Unit)</option>
-															<option value="4739">4739: CNTRL F5</option>
-															<option value="4774">4774: The Drop Bears</option>
-															<option value="4802">4802: U.M.M (Unidentified Moving Machines)</option>
-															<option value="5308">5308: Wuhan Yangtze</option>
-															<option value="5333">5333: Can't C#</option>
-															<option value="5449">5449: Prototype</option>
-															<option value="5451">5451: Supernova</option>
-															<option value="5516">5516: Iron Maple</option>
-															<option value="5522">5522: Stargazer</option>
-															<option value="5584">5584: ICRobotics</option>
-															<option value="5648">5648: Melbourne RoboCats</option>
-															<option value="5663">5663: Ground Control</option>
-															<option value="5876">5876: ARTEMIS</option>
-															<option value="5983">5983: Blast Furnace Bots</option>
-															<option value="5985">5985: Project Bucephalus</option>
-															<option value="5988">5988: Narooma Robo Rebels</option>
-															<option value="6007">6007: RoboPod</option>
-															<option value="6035">6035: House of Ulladulla Robotics</option>
-															<option value="6063">6063: QLA Pineapples</option>
-															<option value="6083">6083: Overlooking</option>
-															<option value="6304">6304: EAGLE</option>
-															<option value="6386">6386: Guangzhou research robot club</option>
-															<option value="6393">6393: Pioneer</option>
-															<option value="6432">6432: St Cathodes</option>
-															<option value="6434">6434: Bossley Park High School</option>
-															<option value="6441">6441: Turbo Turtle</option>
-															<option value="6476">6476: Supernova Star Squad</option>
-															<option value="6508">6508: Hastings Heroes</option>
-															<option value="6510">6510: Pymble Pride</option>
-															<option value="6520">6520: GreenAms Robotics Team</option>
-															<option value="6524">6524: Wilder Wolves FRC</option>
-															<option value="6575">6575: Tempe T-Rex</option>
-															<option value="6579">6579: Komplete Kaos Inc</option>
-															<option value="6813">6813: Pangaea</option>
-															<option value="6986">6986: White Shark</option>
-															<option value="6996">6996: Koalafied</option>
-															<option value="6997">6997: Bad wolf</option>
-															<option value="7047">7047: Magic Frog</option>
-															<option value="7074">7074: Reapers</option>
-															<option value="7113">7113: Control Rising</option>
-															<option value="7129">7129: Pilbara Protons</option>
-															<option value="7146">7146: Infinity Robotics</option>
-															<option value="7433">7433: Iona Fusion</option>
-															<option value="7551">7551: Extreme Mechanism</option>
-															<option value="7561">7561: Blue Flamingos</option>
-															<option value="7586">7586: ShenHao_The Salted Fishballs</option>
-															<option value="7588">7588: H.I.I Robot</option>
-															<option value="7593">7593: SymbiOHSis</option>
-															<option value="7601">7601: Iron Phoenix</option>
-															<option value="7707">7707: Cutting Edge Robotics</option>
-															<option value="7709">7709: Formosa Pangolin</option>
-															<option value="7719">7719: Java Knights</option>
-															<option value="7741">7741: South Taiwan AI Robot</option>
-															<option value="7779">7779: Team Murdoch</option>
-															<option value="7838">7838: Crobotics</option>
-															<option value="7844">7844: Yirara Colleg</option>
-															<option value="7884">7884: Parramatta High School</option>
-														</optgroup>
-														<optgroup label="Southern Cross Regional">
-															<option value="3132">3132: Thunder Down Under</option>
-															<option value="3881">3881: WHEA Sharkbots</option>
-															<option value="4253">4253: Raid Zero</option>
-															<option value="4613">4613: Barker Redbacks</option>
-															<option value="4614">4614: Purple Monkey Dishwasher</option>
-															<option value="4774">4774: The Drop Bears</option>
-															<option value="4801">4801: Blacktown Boys Cybernetic Phoenix</option>
-															<option value="4802">4802: U.M.M (Unidentified Moving Machines)</option>
-															<option value="4817">4817: One Degree North</option>
-															<option value="5308">5308: Wuhan Yangtze</option>
-															<option value="5449">5449: Prototype</option>
-															<option value="5451">5451: Supernova</option>
-															<option value="5516">5516: Iron Maple</option>
-															<option value="5564">5564: GBHS Robotics</option>
-															<option value="5593">5593: Devil Robotics</option>
-															<option value="5985">5985: Project Bucephalus</option>
-															<option value="6050">6050: Wee Waa Bush Bots</option>
-															<option value="6083">6083: Overlooking</option>
-															<option value="6191">6191: RoboKryptonite</option>
-															<option value="6434">6434: Bossley Park High School</option>
-															<option value="6510">6510: Pymble Pride</option>
-															<option value="6520">6520: GreenAms Robotics Team</option>
-															<option value="6525">6525: Greater Sydney Robotics</option>
-															<option value="6579">6579: Komplete Kaos Inc</option>
-															<option value="6986">6986: White Shark</option>
-															<option value="6996">6996: Koalafied</option>
-															<option value="7023">7023: Oxley High School Robotics Team</option>
-															<option value="7124">7124: 8-bit Destroyers - Cranebrook HS</option>
-															<option value="7128">7128: XLR8</option>
-															<option value="7130">7130: FABLAB MDHS</option>
-															<option value="7163">7163: A.I. Metal Pies</option>
-															<option value="7278">7278: Toormina High School</option>
-															<option value="7433">7433: Iona Fusion</option>
-															<option value="7523">7523: SpringBots</option>
-															<option value="7526">7526: Welcome to team</option>
-															<option value="7527">7527: Kaohsiung power</option>
-															<option value="7583">7583: Elonera Embers</option>
-															<option value="7593">7593: SymbiOHSis</option>
-															<option value="7632">7632: An Kang Robotics Maker</option>
-															<option value="7636">7636: Robomania</option>
-															<option value="7641">7641: Normal Force</option>
-															<option value="7644">7644: CCHS</option>
-															<option value="7719">7719: Java Knights</option>
-															<option value="7780">7780: Colyton High School</option>
-														</optgroup>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Team slot</label>
+													<select class="form-control custom-select">
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
 													</select>
 												</div>
-                                            </div>
+											</div>
                                         </div>
                                     </section>
                                     <!-- Step 2 -->
                                     <h6>Setup</h6>
                                     <section>
                                         <div class="row">
+											<div class="col-md-12 lab-gart">
+												<label>Staged position</label>
+												<label id="startpos-error" class="text-danger">Cax</label>
+											</div>
                                             <div id="container-gart-preload" class="col-md-12">
                                                 <canvas id="pre-load-gart"></canvas>
+												<input type="hidden" name="hid" id="startpos" value="">
                                             </div>
                                         </div>
+										<div class="row">
+											<div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Preloaded game piece</label>
+                                                    <div class="input-group">
+                                                        <ul class="icheck-list col-md-12 ul-alli">
+                                                            <li class="col-md-3 col-sm-3 col-3">
+                                                                <input type="radio" value="none" class="check" checked id="gp-none" name="game-piece" data-radio="iradio_flat-red">
+                                                                <label for="gp-none">None</label>
+                                                            </li>
+                                                            <li class="col-md-3 col-sm-3 col-3">
+                                                                <input type="radio" value="cargo" class="check" id="gp-cargo" name="game-piece" data-radio="iradio_flat-red">
+                                                                <label for="gp-cargo">Cargo</label>
+                                                            </li>
+															<li class="col-md-4 col-sm-4 col-4">
+                                                                <input type="radio" value="hatch panel" class="check" id="gp-hp" name="game-piece" data-radio="iradio_flat-red">
+                                                                <label for="gp-hp">Hatch panel</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+										</div>
                                     </section>
                                     <!-- Step 3 -->
                                     <h6>Process</h6>
                                     <section>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="int1">Interview For :</label>
-                                                    <input type="text" class="form-control" id="int1"> </div>
-                                                <div class="form-group">
-                                                    <label for="intType1">Interview Type :</label>
-                                                    <select class="custom-select form-control" id="intType1" data-placeholder="Type to search cities" name="intType1">
-                                                        <option value="Banquet">Normal</option>
-                                                        <option value="Fund Raiser">Difficult</option>
-                                                        <option value="Dinner Party">Hard</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="Location1">Location :</label>
-                                                    <select class="custom-select form-control" id="Location1" name="location">
-                                                        <option value="">Select City</option>
-                                                        <option value="India">India</option>
-                                                        <option value="USA">USA</option>
-                                                        <option value="Dubai">Dubai</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="jobTitle2">Interview Date :</label>
-                                                    <input type="date" class="form-control" id="jobTitle2">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Requirements :</label>
-                                                    <div class="m-b-10">
-                                                        <label class="custom-control custom-radio">
-                                                            <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                                                            <span class="custom-control-label">Employee</span>
-                                                        </label>
-                                                        <label class="custom-control custom-radio">
-                                                            <input id="radio2" name="radio" type="radio" class="custom-control-input">
-                                                            <span class="custom-control-label">Contract</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
+											<div class="col-md-12 lab-gart">
+												<label>Strategy</label>
+												<label id="strategy-error" class="text-danger">Cax</label>
+											</div>
+                                            <div id="container-gart-process" class="col-md-12">
+                                                <canvas id="process-gart"></canvas>
+												<input type="hidden" name="hid" id="autonomous" value="">
+												<input type="hidden" name="hid" id="teleop" value="">
                                             </div>
                                         </div>
                                     </section>

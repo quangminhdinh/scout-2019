@@ -6,6 +6,18 @@
 	margin: 0 auto;
 }
 
+.lab-gart {
+	margin-bottom: .5rem;
+}
+
+#startpos-error {
+	display: none;
+}
+
+#container-gart-preload {
+	margin-bottom: 25px;
+}
+
 .ico-gart {
 	font-size: 10px;
 }

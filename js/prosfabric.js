@@ -102,7 +102,7 @@ function GartCanvas(canvas_id, width, height) {
 
 function ScoutMap() {
 	var info = getInfo();
-	var canvas = new GartCanvas('pre-load-gart', info.width, info.height);
+	var canvas = new GartCanvas('process-gart', info.width, info.height);
 	var start = [new Compfield(0, info.width, 0.857, 0.083, 0.172, 0.05, 0.057, canvas),
 					new Compfield(1, info.width, 0.857, 0.083, 0.229, 0.05, 0.076, canvas),
 					new Compfield(2, info.width, 0.857, 0.083, 0.305, 0.05, 0.057, canvas),

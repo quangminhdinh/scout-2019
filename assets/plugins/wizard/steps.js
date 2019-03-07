@@ -25,6 +25,13 @@ $(".validation-wizard").steps({
         finish: "Submit"
     }
     , onStepChanging: function (event, currentIndex, newIndex) {
+		if (newIndex === 2 && $('#startpos').val() === "") {
+			$('#startpos-error').show();
+			$('#startpos-error').html("Cax");
+			return false;
+		} else {
+			$('#startpos-error').hide();
+		}
         return currentIndex > newIndex || !(3 === newIndex && Number($("#age-2").val()) < 18) && (currentIndex < newIndex && (form.find(".body:eq(" + newIndex + ") label.error").remove(), form.find(".body:eq(" + newIndex + ") .error").removeClass("error")), form.validate().settings.ignore = ":disabled,:hidden", form.valid())
     }
     , onFinishing: function (event, currentIndex) {
@@ -34,7 +41,7 @@ $(".validation-wizard").steps({
          swal("Form Submitted!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
     }
 }), $(".validation-wizard").validate({
-    ignore: "input[type=hidden]"
+    ignore: []
     , errorClass: "text-danger"
     , successClass: "text-success"
     , highlight: function (element, errorClass) {
@@ -49,6 +56,9 @@ $(".validation-wizard").steps({
     , rules: {
         email: {
             email: !0
-        }
+        },
+		hid: {
+			required: true
+		}
     }
 })
