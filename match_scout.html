@@ -14,6 +14,8 @@
 	<link href="./assets/plugins/wizard/steps.css" rel="stylesheet">
     <!--alerts CSS -->
     <link href="./assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+	<!--jsPanel -->
+    <link href="./assets/plugins/jsPanel/jspanel.min.css" rel="stylesheet" type="text/css">
 	<!-- page CSS -->
     <link href="./assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
     <link href="./assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
@@ -27,7 +29,7 @@
     <link href="css/style.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
-    <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
+    <link href="css/colors/megna-dark.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -81,12 +83,12 @@
                     <!-- User profile and search -->
 					<ul class="navbar-nav mr-auto mt-md-0">
 						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" href="#"><i class="mdi mdi-xbox-controller"></i></a></li>
-						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" href="#"><i class="mdi mdi-account-multiple"></i></a></li>
-						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" href="#"><i class="mdi mdi-memory"></i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" title="This component is currently in the course of development" href="#"><i class="mdi mdi-account-multiple"></i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" title="This component is currently in the course of development" href="#"><i class="mdi mdi-memory"></i></a></li>
 						
 						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" href="#">Match scout</i></a></li>
-						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" href="#">Alliance scout</i></a></li>
-						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" href="#">Team scout</a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" title="This component is currently in the course of development" href="#">Alliance scout</i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" title="This component is currently in the course of development" href="#">Pit scout</a></li>
 					</ul>
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
@@ -348,11 +350,96 @@
 											<div class="col-md-12 lab-gart">
 												<label>Strategy</label>
 												<label id="strategy-error" class="text-danger">Cax</label>
+												<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="rkscr" aria-labelledby="ScrRocket" aria-hidden="true" style="display: none;">
+													<div class="modal-dialog modal-lg">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h4 class="modal-title" id="ScrRocket">Level</h4>
+																<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+															</div>
+															<div class="modal-body">
+																<button id="gart-level-1" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">LEVEL 1</button>
+																<button id="gart-level-2" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">LEVEL 2</button>
+																<button id="gart-level-3" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">LEVEL 3</button>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+															</div>
+														</div>
+														<!-- /.modal-content -->
+													</div>
+													<!-- /.modal-dialog -->
+												</div>
+												
+												<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="grtfoul" aria-labelledby="Fol" aria-hidden="true" style="display: none;">
+													<div class="modal-dialog modal-lg">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h4 class="modal-title" id="Fol">Detail</h4>
+																<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+															</div>
+															<div class="modal-body">
+																<div class="row">
+																	<div class="col-md-6 col-sm-6">
+																		<button id="gart-foul-general" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">General</button>
+																		<button id="gart-foul-tech" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Tech foul</button>
+																		<button id="gart-foul-player" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Player foul</button>
+																		<button id="gart-foul-yellow" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Yellow card</button>
+																		<button id="gart-foul-red" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Red card</button>
+																	</div>
+																	<div class="col-md-5 col-sm-5">
+																		<button id="gart-foul-g04" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">G04: Controlling more<br>than 1 game piece</button>
+																		<button id="gart-foul-g09" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">G09: More than 1 defender</button>
+																		<button id="gart-foul-g13" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">G13: Contacted opponent<br>in HAB zone</button>
+																		<button id="gart-foul-g16" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">G16: Touch opponent's<br>rocket during end game</button>
+																		<button id="gart-foul-g18" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">G18: Pinning for more<br>than 5 seconds</button>
+																	</div>
+																</div>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+															</div>
+														</div>
+														<!-- /.modal-content -->
+													</div>
+													<!-- /.modal-dialog -->
+												</div>
+												
+												<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="grtbreak" aria-labelledby="Brk" aria-hidden="true" style="display: none;">
+													<div class="modal-dialog modal-lg">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h4 class="modal-title" id="Brk">Detail</h4>
+																<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+															</div>
+															<div class="modal-body">
+																<div class="row">
+																	<div class="col-md-6 col-sm-6">
+																		<button id="gart-break-pb" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Partial breakdown</button>
+																		<button id="gart-break-nm" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Never moved</button>
+																		<button id="gart-break-lp" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Lost parts</button>
+																	</div>
+																	<div class="col-md-6 col-sm-6">
+																		<button id="gart-break-in" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Intermittent</button>
+																		<button id="gart-break-na" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">No Autonomous</button>
+																		<button id="gart-break-dn" type="button" data-dismiss="modal" class="btn btn-block waves-effect waves-light btn-info">Did not show</button>
+																	</div>
+																</div>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+															</div>
+														</div>
+														<!-- /.modal-content -->
+													</div>
+													<!-- /.modal-dialog -->
+												</div>
 											</div>
                                             <div id="container-gart-process" class="col-md-12">
                                                 <canvas id="process-gart"></canvas>
 												<input type="hidden" name="hid" id="autonomous" value="">
 												<input type="hidden" name="hid" id="teleop" value="">
+												<input type="hidden" name="hid" id="end-process" value="">
                                             </div>
                                         </div>
                                     </section>
@@ -360,47 +447,53 @@
                                     <h6>End</h6>
                                     <section>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
+												<div class="form-group">
+													<label>Occured</label>
+													<select class="form-control custom-select">
+														<option value="None">None</option>
+														<option value="Fast Hatch pickup from floor">Fast Hatch pickup from floor</option>
+														<option value="Fast Cargo pickup from floor">Fast Cargo pickup from floor</option>
+														<option value="Played defense all or part of the match">Played defense all or part of the match</option>
+														<option value="Team de-scored previously scored Cargo">Team de-scored previously scored Cargo</option>
+														<option value="Team de-scored previously scored Cargo">Team de-scored previously scored Cargo</option>
+													</select>
+												</div>
+											</div>
+                                        </div>
+										<div class="row">
+											<div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="behName1">Behaviour :</label>
-                                                    <input type="text" class="form-control" id="behName1">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="participants1">Confidance</label>
-                                                    <input type="text" class="form-control" id="participants1">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="participants1">Result</label>
-                                                    <select class="custom-select form-control" id="participants1" name="location">
-                                                        <option value="">Select Result</option>
-                                                        <option value="Selected">Selected</option>
-                                                        <option value="Rejected">Rejected</option>
-                                                        <option value="Call Second-time">Call Second-time</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="decisions1">Comments</label>
-                                                    <textarea name="decisions" id="decisions1" rows="4" class="form-control"></textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Rate Interviwer :</label>
-                                                    <div class="c-inputs-stacked">
-                                                        <label class="inline custom-control custom-checkbox block">
-                                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-label ml-0">1 star</span> </label>
-                                                        <label class="inline custom-control custom-checkbox block">
-                                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-label ml-0">2 star</span> </label>
-                                                        <label class="inline custom-control custom-checkbox block">
-                                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-label ml-0">3 star</span> </label>
-                                                        <label class="inline custom-control custom-checkbox block">
-                                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-label ml-0">4 star</span> </label>
-                                                        <label class="inline custom-control custom-checkbox block">
-                                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-label ml-0">5 star</span> </label>
+                                                    <label>Sandstorm</label>
+                                                    <div class="input-group">
+                                                        <ul class="icheck-list col-md-12 ul-alli">
+                                                            <li class="col-md-6 col-sm-6 col-6">
+                                                                <input type="radio" value="Autonomous" class="check" checked id="st-ato" name="sandstr" data-radio="iradio_flat-red">
+                                                                <label for="st-ato">Autonomous</label>
+                                                            </li>
+                                                            <li class="col-md-5 col-sm-5 col-5">
+                                                                <input type="radio" value="Blind" class="check" id="st-tlp" name="sandstr" data-radio="iradio_flat-red">
+                                                                <label for="st-tlp">Blind drive</label>
+                                                            </li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="st-note">Sandstorm notes</label>
+                                                    <textarea name="st-notes" id="st-note" rows="5" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+											<div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="tlp-note">Teleop notes</label>
+                                                    <textarea name="tlp-notes" id="tlp-note" rows="5" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+										</div>
                                     </section>
                                 </form>
                             </div>
@@ -519,7 +612,10 @@
         }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
     }(window, document, jQuery);
     </script>
+	<!-- jsPanel -->
+	<script src="./assets/plugins/jsPanel/jspanel.min.js"></script>
 	<script src="js/prelfabric.js"></script>
+	<script src="js/prosfabric.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->

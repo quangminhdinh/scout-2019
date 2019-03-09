@@ -80,13 +80,14 @@ function Compfield(m_id, nw, r_left, b_left, tp, width, height, canvas) {
 function GartCanvas(canvas_id, width, height) {
 	var canvas = new fabric.Canvas(canvas_id, {
 		width: width,
-		height: height
+		height: height,
+		selection: false
 	});
 	var active = null;
 	fabric.Image.fromURL('./assets/images/arena.png', function (img) {
 		img.set({
 			scaleX : width / 955,
-			scaleY: height /515
+			scaleY: height / 515
 		});
 		canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
 	});

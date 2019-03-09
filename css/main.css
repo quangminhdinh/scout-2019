@@ -2,7 +2,7 @@
 	margin-left: 0;
 }
 
-#pre-load-gart {
+#pre-load-gart, #process-gart {
 	margin: 0 auto;
 }
 
@@ -10,11 +10,19 @@
 	margin-bottom: .5rem;
 }
 
-#startpos-error {
+.op-g {
+	opacity: 0.8;
+}
+
+#startpos-error, #strategy-error, #gart-menu, .jsPanel-btn-close, .jsPanel-btn-maximize, .panbut {
 	display: none;
 }
 
-#container-gart-preload {
+.jsPanel-headerlogo > img {
+	max-height: 30px;
+}
+
+#container-gart-preload, #container-gart-process {
 	margin-bottom: 25px;
 }
 
