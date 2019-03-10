@@ -1,3 +1,9 @@
+<?php
+	session_start();
+    if(!isset($_SESSION["username"]) || !isset($_SESSION["name"]) || !isset($_SESSION["type"])){
+		header("location:login.html");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,21 +102,21 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dinh Quang Minh <i class="ti-angle-down ico-gart"></i></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION["name"]; ?><i class="ti-angle-down ico-gart"></i></a>
                             <div class="dropdown-menu dropdown-menu-right scale-up">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
                                             <div class="u-text">
-                                                <h4>Dinh Quang Minh dep zai vcl</h4>
-                                                <h5 class="text-muted">Role: Scouter</h5>
+                                                <h4><?php echo $_SESSION["name"]; ?></h4>
+                                                <h5 class="text-muted">Role: <?php echo $_SESSION["type"]; ?></h5>
 											</div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li><a class="right-side-toggle" href="#"><i class="ti-settings sv-panel"></i> Service Panel</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -146,7 +152,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body wizard-content">
-                                <form action="#" class="validation-wizard wizard-circle">
+                                <form id="gart-frm" action="#" class="validation-wizard wizard-circle">
                                     <!-- Step 1 -->
                                     <h6>Info</h6>
                                     <section>
@@ -179,7 +185,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label>Region</label>
-													<select class="form-control custom-select">
+													<select name="gart-regn" class="form-control custom-select">
 														<option value="SPR">South Pacific Regional</option>
 														<option value="SCR">Southern Cross Regional</option>
 														<option value="test">Test</option>
@@ -189,7 +195,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label>Match type</label>
-													<select class="form-control custom-select">
+													<select name="gart-mtchyp" class="form-control custom-select">
 														<option value="practice">Practice Match</option>
 														<option value="qualification">Qualification Match</option>
 														<option value="elimination">Elimination Match</option>
@@ -297,7 +303,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label>Team slot</label>
-													<select class="form-control custom-select">
+													<select name="gart-tmslt" class="form-control custom-select">
 														<option value="1">1</option>
 														<option value="2">2</option>
 														<option value="3">3</option>
@@ -437,9 +443,9 @@
 											</div>
                                             <div id="container-gart-process" class="col-md-12">
                                                 <canvas id="process-gart"></canvas>
-												<input type="hidden" name="hid" id="autonomous" value="">
-												<input type="hidden" name="hid" id="teleop" value="">
-												<input type="hidden" name="hid" id="end-process" value="">
+												<input type="hidden" name="hid1" id="autonomous" value="">
+												<input type="hidden" name="hid2" id="teleop" value="">
+												<input type="hidden" name="hid3" id="end-process" value="">
                                             </div>
                                         </div>
                                     </section>
@@ -450,7 +456,7 @@
                                             <div class="col-md-12">
 												<div class="form-group">
 													<label>Occured</label>
-													<select class="form-control custom-select">
+													<select name="gart-occrd" class="form-control custom-select">
 														<option value="None">None</option>
 														<option value="Fast Hatch pickup from floor">Fast Hatch pickup from floor</option>
 														<option value="Fast Cargo pickup from floor">Fast Cargo pickup from floor</option>

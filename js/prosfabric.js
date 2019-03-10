@@ -1,6 +1,8 @@
 var FULL = true;
 var POS_ID = -1;
 var BUT_ID = ['gart-climb', 'gart-drop', 'gart-score', 'gart-score-cs', 'gart-pk-hatch', 'gart-pk-cargo', 'gart-load-hatch', 'gart-load-cargo', 'gart-foul', 'gart-break']
+var HISTORY = [];
+var HISTORY_MSG = "";
 
 function Procfield(m_id, nw, left, tp, width, height, angle) {
 	var comp = new fabric.Rect({
@@ -272,7 +274,7 @@ function createMenu (nw, width, height, but) {
 			colorHeader: '#000',
 			colorContent: '#000'
 		},
-		footerToolbar: 'Lorems',
+		footerToolbar: '__',
 		headerToolbar: '<button id="gart-switch" type="button" class="btn op-g btn-block waves-effect waves-light btn-secondary">Switch to teleop</button>',
 		contentSize: {
 			width: nw * width,

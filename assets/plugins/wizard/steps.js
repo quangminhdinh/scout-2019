@@ -52,7 +52,19 @@ $(".validation-wizard").steps({
         return form.validate().settings.ignore = ":disabled", form.valid()
     }
     , onFinished: function (event, currentIndex) {
-         swal("Form Submitted!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.");
+         $.ajax ({ url: "match.php",
+					data: $('#gart-frm').serialize(),
+					dataType: "text",
+					type: "POST",
+					success: function(result){
+						if (result == "true") {
+							window.location.replace("./match_scout.php");
+						}
+					},
+					error: function(xhr,status,error) {
+						alert("Error! Please check your connection again.");
+					}
+		});
     }
 }), $(".validation-wizard").validate({
     ignore: []
@@ -72,6 +84,9 @@ $(".validation-wizard").steps({
             email: !0
         },
 		hid: {
+			required: true
+		},
+		hid3: {
 			required: true
 		}
     }
