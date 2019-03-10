@@ -21,6 +21,7 @@
     <!--alerts CSS -->
     <link href="./assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 	<!--jsPanel -->
+	<link href="./assets/plugins/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <link href="./assets/plugins/jsPanel/jspanel.min.css" rel="stylesheet" type="text/css">
 	<!-- page CSS -->
     <link href="./assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
@@ -89,12 +90,12 @@
                     <!-- User profile and search -->
 					<ul class="navbar-nav mr-auto mt-md-0">
 						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" href="#"><i class="mdi mdi-xbox-controller"></i></a></li>
-						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" title="This component is currently in the course of development" href="#"><i class="mdi mdi-account-multiple"></i></a></li>
-						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" title="This component is currently in the course of development" href="#"><i class="mdi mdi-memory"></i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" title="This component is currently in the course of development" onclick="swal('Error', 'This component is currently in the course of development');" href="#"><i class="mdi mdi-account-multiple"></i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-sm-up" title="This component is currently in the course of development" onclick="swal('Error', 'This component is currently in the course of development');" href="#"><i class="mdi mdi-memory"></i></a></li>
 						
 						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" href="#">Match scout</i></a></li>
-						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" title="This component is currently in the course of development" href="#">Alliance scout</i></a></li>
-						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" title="This component is currently in the course of development" href="#">Pit scout</a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" title="This component is currently in the course of development" onclick="swal('Error', 'This component is currently in the course of development');" href="#">Alliance scout</i></a></li>
+						<li class="nav-item"><a class="nav-link text-muted waves-effect waves-dark hidden-xs-down" title="This component is currently in the course of development" onclick="swal('Error', 'This component is currently in the course of development');" href="#">Pit scout</a></li>
 					</ul>
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
@@ -564,6 +565,7 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="./assets/plugins/jquery/jquery.min.js"></script>
+	<script src="./assets/plugins/jqueryui/jquery-ui.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="./assets/plugins/bootstrap/js/popper.min.js"></script>
     <script src="./assets/plugins/bootstrap/js/bootstrap.min.js"></script>

@@ -10,6 +10,10 @@
 	margin-bottom: .5rem;
 }
 
+.jsPanel-ftr {
+	justify-content: flex-start !important;
+}
+
 .op-g {
 	opacity: 0.8;
 }
