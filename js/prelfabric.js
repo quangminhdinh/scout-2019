@@ -1,36 +1,93 @@
-function Compfield(nw, r_left, b_left, tp, width, height) {
-	this.comp = new fabric.Rect({
+function Compfield(m_id, nw, r_left, b_left, tp, width, height, canvas) {
+	var comp = new fabric.Rect({
+	  id : m_id,
 	  left: nw * r_left,
 	  top: nw * tp,
-	  fill: 'red',
+	  fill: 'white',
+	  opacity: 0.5,
 	  width: nw * width,
 	  height: nw * height,
-	  selectable: false
+	  selectable: false,
+	  hoverCursor: "pointer"
 	});
+	
 	this.switch_b = function() {
-		this.comp.set({
-		  left: nw * b_left
-		});
+		comp.set('left', nw * b_left);
+		if (canvas.active) {
+			canvas.active.set('opacity', 0.5);
+			canvas.active = null;
+			$('#startpos').val("");
+		}
 	}
 	this.switch_r = function() {
-		this.comp.set({
-		  left: nw * r_left
-		});
+		comp.set('left', nw * r_left);
+		if (canvas.active) {
+			canvas.active.set('opacity', 0.5);
+			canvas.active = null;
+			$('#startpos').val("");
+		}
 	}
 	this.update = function() {
-		this.comp.setCoords();
+		comp.setCoords();
 	}
+	this.getComp = function() {
+		return comp;
+	}
+	comp.on({
+		'mouseover': function() {
+			if (!canvas.active || canvas.active.get('id') !== m_id){
+				comp.set('opacity', 0.7);
+				canvas.update();
+			}
+		},
+		'mouseout': function() {
+			if (!canvas.active || canvas.active.get('id') !== m_id){
+				comp.set('opacity', 0.5);
+				canvas.update();
+			}
+		},
+		'mousedown': function() {
+			if (!canvas.active){
+				comp.set('opacity', 0.9);
+				canvas.update();
+				canvas.active = comp;
+				$('#startpos').val(m_id);
+			} else if (canvas.active.get('id') !== m_id) {
+				comp.set('opacity', 0.9);
+				canvas.update();
+				canvas.active.set('opacity', 0.5);
+				canvas.active = comp;
+				$('#startpos').val(m_id);
+			}
+		},
+		'touchgesture': function() {
+			if (!canvas.active){
+				comp.set('opacity', 0.9);
+				canvas.update();
+				canvas.active = comp;
+				$('#startpos').val(m_id);
+			} else if (canvas.active.get('id') !== m_id) {
+				comp.set('opacity', 0.9);
+				canvas.update();
+				canvas.active.set('opacity', 0.5);
+				canvas.active = comp;
+				$('#startpos').val(m_id);
+			}
+		}
+	});
 }
 
 function GartCanvas(canvas_id, width, height) {
 	var canvas = new fabric.Canvas(canvas_id, {
 		width: width,
-		height: height
+		height: height,
+		selection: false
 	});
+	var active = null;
 	fabric.Image.fromURL('./assets/images/arena.png', function (img) {
 		img.set({
 			scaleX : width / 955,
-			scaleY: height /515
+			scaleY: height / 515
 		});
 		canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
 	});
@@ -39,35 +96,19 @@ function GartCanvas(canvas_id, width, height) {
 	}
 	this.g_add = function(comp_arr) {
 		for (var i = 0; i < comp_arr.length; i ++) {
-			canvas.add(comp_arr[i].comp);
+			canvas.add(comp_arr[i].getComp());
 		}
-	}
-	this.setEvent = function() {
-		canvas.on({
-			'mouse:over': function(e) {
-				if (e.target) {
-					e.target.set('fill', 'violet');
-					canvas.renderAll();
-				}
-			},
-			'mouse:out': function(e) {
-				if (e.target) {
-					e.target.set('fill', 'green');
-					canvas.renderAll();
-				}
-			}
-		});
 	}
 }
 
 function ScoutMap() {
 	var info = getInfo();
 	var canvas = new GartCanvas('pre-load-gart', info.width, info.height);
-	var start = [new Compfield(info.width, 0.857, 0.083, 0.172, 0.05, 0.057),
-					new Compfield(info.width, 0.857, 0.083, 0.229, 0.05, 0.076),
-					new Compfield(info.width, 0.857, 0.083, 0.305, 0.05, 0.057),
-					new Compfield(info.width, 0.9081, 0.01, 0.172, 0.072, 0.057),
-					new Compfield(info.width, 0.9081, 0.01, 0.305, 0.072, 0.057)];
+	var start = [new Compfield(0, info.width, 0.857, 0.083, 0.172, 0.05, 0.057, canvas),
+					new Compfield(1, info.width, 0.857, 0.083, 0.229, 0.05, 0.076, canvas),
+					new Compfield(2, info.width, 0.857, 0.083, 0.305, 0.05, 0.057, canvas),
+					new Compfield(3, info.width, 0.9081, 0.01, 0.172, 0.072, 0.057, canvas),
+					new Compfield(4, info.width, 0.9081, 0.01, 0.305, 0.072, 0.057, canvas)];
 	this.setAlliance = function() {
 		$('#flat-radio-1').on('ifChecked', function() {
 			for (var i = 0; i < start.length; i ++) {
@@ -94,7 +135,6 @@ function ScoutMap() {
 	}
 	this.ready = function() {
 		this.setPadding();
-		canvas.setEvent();
 		canvas.g_add(start);
 		this.setAlliance();
 	}

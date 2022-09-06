@@ -2,8 +2,32 @@
 	margin-left: 0;
 }
 
-#pre-load-gart {
+#pre-load-gart, #process-gart {
 	margin: 0 auto;
+}
+
+.lab-gart {
+	margin-bottom: .5rem;
+}
+
+.jsPanel-ftr {
+	justify-content: flex-start !important;
+}
+
+.op-g {
+	opacity: 0.8;
+}
+
+#startpos-error, #strategy-error, #gart-menu, .jsPanel-btn-close, .jsPanel-btn-maximize, .panbut {
+	display: none;
+}
+
+.jsPanel-headerlogo > img {
+	max-height: 30px;
+}
+
+#container-gart-preload, #container-gart-process {
+	margin-bottom: 25px;
 }
 
 .ico-gart {
